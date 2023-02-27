@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+
+  <!--
+  <property name="LOG_PATTERN" value="[%-5level] %d{yy-MM-dd HH:mm:ss} %logger:%line [%thread] %n==> %msg%n"/>
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>${LOG_PATTERN}</pattern>
+    </encoder>
+  </appender>
+  -->
+
+
+
+  <!-- spring -->
+  <logger name="org.springframework" level="INFO"/>
+  <logger name="_org.springframework.web.servlet.HandlerMapping" level="INFO"/>
+  <!-- ======== 기타  ======== -->
+  <logger name="org.apache" level="ERROR"/>
+  <!-- X509Certificate 로그-->
+  <logger name="jdk.event.security" level="WARN"/>
+  <!-- netty -->
+  <logger name="io.netty" level="INFO"/>
+  <logger name="reactor.netty" level="INFO"/>
+  <logger name="reactor.util" level="INFO"/>
+
+  <!-- 개발대상 -->
+  <logger name="com.noovertime" level="DEBUG"/>
+
+  <root level="DEBUG">
+    <!-- local은 화면로그만, 포맷은 properties 파일 설정 그대로 사용 -->
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
